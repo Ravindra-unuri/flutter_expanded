@@ -18,6 +18,10 @@ class MyApp extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
+            Widget_customContainer(
+              col: Colors.yellowAccent,
+              flv: 4
+            ),
             Expanded(
               flex: 8,
               child: Container(
@@ -50,4 +54,23 @@ class MyApp extends StatelessWidget {
       ),
     ));
   }
+}
+Widget_customContainer({
+  required int flv,
+  required Color col,
+}){
+  return Expanded(
+    flex: flv,
+    child: Container(
+      constraints: BoxConstraints.expand(),
+      padding: EdgeInsetsDirectional.all(30),
+      color: col,
+      child: Center(child: Text('8',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 32,
+        ),
+      )),
+    ),
+  );
 }
