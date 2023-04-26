@@ -16,27 +16,33 @@ class MyApp extends StatelessWidget {
         title: Text('Expandede Demo'),
       ),
       body: SafeArea(
-        child: Row(
+        child: Column(
           children: [
-            Container(
-              padding: EdgeInsetsDirectional.all(30),
-              color: Colors.red,
-              child: Text('8'),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                padding: EdgeInsetsDirectional.all(30),
-                color: Colors.purple,
-                child: Text('5'),
-              ),
-            ),
             Expanded(
               flex: 8,
               child: Container(
+                constraints: BoxConstraints.expand(),
+                padding: EdgeInsetsDirectional.all(30),
+                color: Colors.red,
+                child: Center(child: Text('8',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 32,
+                  ),
+                )),
+              ),
+            ),
+            Expanded(
+              flex: 5,
+              child: Container(
                 padding: EdgeInsetsDirectional.all(30),
                 color: Colors.blue,
-                child: Text('9'),
+                child: Center(child: Text('5',
+                  style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 32,
+                ),
+                )),
               ),
             ),
           ],
